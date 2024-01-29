@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DenGiaoThong</title>
+  <style>
+    .light {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: 10px;
+      display: inline-block;
+    }
+    #green { background-color: green; }
+    #yellow { background-color: yellow; }
+    #red { background-color: red; }
+  </style>
+</head>
+<body>
+
+  <input type="button" value="Green" onclick="changeLight('green')">
+  <input type="button" value="Yellow" onclick="changeLight('yellow')">
+  <input type="button" value="Red" onclick="changeLight('red')">
+<br>
+  <div id="green" class="light"></div>
+  <br>
+  <div id="yellow" class="light"></div>
+  <br>
+  <div id="red" class="light"></div>
+
+  <script>
+    // Lấy ra tất cả các đèn
+    const greenLight = document.getElementById('green');
+    const yellowLight = document.getElementById('yellow');
+    const redLight = document.getElementById('red');
+
+    // Hàm thay đổi màu sắc đèn
+    function changeLight(color) {
+      switch(color) {
+        case 'green':
+          greenLight.style.backgroundColor = 'green';
+          yellowLight.style.backgroundColor = 'black';
+          redLight.style.backgroundColor = 'black';
+          break;
+        case 'yellow':
+          greenLight.style.backgroundColor = 'black';
+          yellowLight.style.backgroundColor = 'yellow';
+          redLight.style.backgroundColor = 'black';
+          break;
+        case 'red':
+          greenLight.style.backgroundColor = 'black';
+          yellowLight.style.backgroundColor = 'black';
+          redLight.style.backgroundColor = 'red';
+          break;
+        default:
+          break;
+      }
+    }
+  </script>
+
+</body>
+</html>
